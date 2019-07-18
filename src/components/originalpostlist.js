@@ -5,8 +5,8 @@ class OriginalPostList extends React.Component{
 
     state = {
         postIds: [],
-        
-
+        pageSize: 5,
+        currentPage: 1,
     }
     
     getPostList = async (response) => {
@@ -16,23 +16,36 @@ class OriginalPostList extends React.Component{
         return data
     }
 
+    currentPageIds () {
+        console.log(this.state.currentPage, this.state.pageSize)
+        const lowerBound = (this.state.currentPage - 1) * this.state.pageSize
+        const upperBound = this.state.currentPage * this.state.pageSize
+        console.log(upperBound, lowerBound)
+        return this.state.postIds.slice(lowerBound, upperBound)
+    }
+
     async componentWillMount () {
         const postList = await this.getPostList()
         this.setState((state, props) => {
             return {postIds: postList}
         })
-        console.log(this.state.postIds)
     }
 
     render(){
         if (this.state.postIds.length > 0) {
             const items = []
-            for (let postId of this.state.postIds) {
+            for (let postId of this.currentPageIds()) {
                 items.push(<OriginalPost postId={postId}></OriginalPost>)
             }
+
             return(
                 <div>
-                    {items}
+                    <div>
+                        {items}
+                    </div>
+                    <div>
+                        <footer></footer>
+                    </div>
                 </div>
             );
         } else {

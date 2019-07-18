@@ -1,16 +1,12 @@
 import React from 'react';
+import '../css/header.css';
 
 class Header extends React.Component{
     render(){
         return(
             <div>
                 <nav>
-                    <ul>
-                        <li>home</li>
-                        <li>new</li>
-                        <li>popular</li>
-                        <li>idk</li>
-                    </ul>
+                    <h1>Hacker News</h1>
                 </nav>
             </div>
         );

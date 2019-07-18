@@ -1,7 +1,7 @@
 import React from "react";
 
-class Comment extends React.Component {
-
+class CommentPage extends React.Component {
+  
   render(){
     return (
       <div>
@@ -15,4 +15,4 @@ class Comment extends React.Component {
   }
 }
 
-export default Comment;
+export default CommentPage;
