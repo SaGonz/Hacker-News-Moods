@@ -6,7 +6,7 @@ class OriginalPostList extends React.Component{
 
     constructor (props) {
         super(props)
-        // Normally the "this" context is bound to the state of the calling component. In this case thought, these functions
+        // Normally the "this" context is bound to the state of the calling component. In this case though, these functions
         // will be called by child components, but we want to mutate data on the parent. Therefore, we have to bind the "this"
         // context to the parent so we can acccess the parent state and mutate it from the child
         this.changePageUp = this.changePageUp.bind(this)
@@ -65,7 +65,6 @@ class OriginalPostList extends React.Component{
     }
 
     render(){
-        console.log('render called')
         if (this.state.postIds.length > 0) {
             const items = []
             for (let postId of this.currentPageIds()) {

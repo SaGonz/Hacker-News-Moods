@@ -1,6 +1,8 @@
 import React from 'react';
-import Comments from './commentpage';
+import Comment from './comments';
 import '../css/originalpost.css'
+import CommentPage from './commentpage';
+import { NativeRouter, Route, Link } from "react-router-native";
 
 class OriginalPost extends React.Component{
 
@@ -8,6 +10,7 @@ class OriginalPost extends React.Component{
         metadata: {},
         title_sentiment: {},
     }
+
     async componentDidMount() {
 
         //console.log('original post object values', Object.values(this.props))
@@ -20,6 +23,7 @@ class OriginalPost extends React.Component{
             return {metadata: post_metadata}
         })
     }
+
     async shouldComponentUpdate () {
 
         //console.log('original post object values', Object.values(this.props))
@@ -60,9 +64,17 @@ class OriginalPost extends React.Component{
                     <ul className="postInfo">
                         <li>Posted by : {this.state.metadata.by}</li>
                         <li>Score : {this.state.metadata.score}</li>
-                        <li>  <Comments number={this.state.metadata.descendants}/></li>
+                        <li> <Link to="/react"> {this.state.metadata.descendants} comments </Link> </li>
                     </ul>
                 </h3>
+                <div>
+                    <i>This is what a comment page looks like:
+                    <CommentPage/></i>
+                </div>
+                <div>
+                    <i>This is what a comment looks like:
+                    <Comment/></i>
+                </div>
                 {/*<p>
                      if( {this.state.title_sentiment.sentiment_polarity} > 0 ){
 
