@@ -1,7 +1,18 @@
 import React from 'react';
 import OriginalPost from './originalpost';
+import Pagination from './pagination';
 
 class OriginalPostList extends React.Component{
+
+    constructor (props) {
+        super(props)
+        // Normally the "this" context is bound to the state of the calling component. In this case thought, these functions
+        // will be called by child components, but we want to mutate data on the parent. Therefore, we have to bind the "this"
+        // context to the parent so we can acccess the parent state and mutate it from the child
+        this.changePageUp = this.changePageUp.bind(this)
+        this.changePageDown = this.changePageDown.bind(this)
+
+    }
 
     state = {
         postIds: [],
@@ -24,6 +35,28 @@ class OriginalPostList extends React.Component{
         return this.state.postIds.slice(lowerBound, upperBound)
     }
 
+
+    changePageDown () {
+        console.log('change page called')
+            if (this.state.currentPage > 1) {
+                this.setState((state, props) => {
+                    return {currentPage: this.state.currentPage - 1}
+                })
+                this.render()
+            }
+        }
+
+    changePageUp () {
+        console.log('change page up called')
+            if (this.state.currentPage < this.state.postIds.length / 5) {
+                this.setState((state, props) => {
+                    return {currentPage: this.state.currentPage + 1}
+                })
+                this.render()
+        }
+        console.log('new page is ', this.state.currentPage)
+    }
+
     async componentWillMount () {
         const postList = await this.getPostList()
         this.setState((state, props) => {
@@ -32,6 +65,7 @@ class OriginalPostList extends React.Component{
     }
 
     render(){
+        console.log('render called')
         if (this.state.postIds.length > 0) {
             const items = []
             for (let postId of this.currentPageIds()) {
@@ -44,7 +78,7 @@ class OriginalPostList extends React.Component{
                         {items}
                     </div>
                     <div>
-                        <footer></footer>
+                        <Pagination changePageDown={this.changePageDown} changePageUp={this.changePageUp}/>
                     </div>
                 </div>
             );

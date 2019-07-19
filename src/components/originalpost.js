@@ -20,7 +20,17 @@ class OriginalPost extends React.Component{
             return {metadata: post_metadata}
         })
     }
-    shouldComponentUpdate () {
+    async shouldComponentUpdate () {
+
+        //console.log('original post object values', Object.values(this.props))
+
+        const post_metadata = await this.getPost();
+        //const sentiment_response = await this.getSentiment(post_metadata.title);
+
+        this.setState((state, props) => {
+            //return {metadata: post_metadata, title_sentiment: sentiment_response}
+            return {metadata: post_metadata}
+        })
         return true
     }
 

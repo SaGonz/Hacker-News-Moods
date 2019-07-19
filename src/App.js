@@ -37,7 +37,6 @@ class App extends React.Component {
         <div>
           {this.state.pageOfItems.map(item => <div key={item.id}>{item.name}</div>)}
         </div>
-        <Pagination/>
       </div>
     );
   }

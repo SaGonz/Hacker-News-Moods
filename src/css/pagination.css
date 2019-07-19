@@ -1,11 +1,13 @@
 .paginationWrapper{
     display: flex;
     justify-content: space-evenly;
-    margin: 0.4rem;
+    margin-bottom: 0.5rem;
 }
 
 .paginationWrapper>div{
     padding: 1rem;
     background-color: #000000;
     width: 20%;
+    color: #ffffff;
+    text-align: center;
 }
