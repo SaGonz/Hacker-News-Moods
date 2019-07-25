@@ -1,13 +1,28 @@
 import React from "react";
-import '../css/commentpage.css';
-import Comment from './comment';
 import { Link } from 'react-router-dom';
+//Styles
+import '../css/commentpage.css';
+//Components
+import Comment from './comment';
+import Comments from './comments';
+
 
 class CommentPage extends React.Component {
   
+    state = {
+        OriginalPost : {}
+    }
 
     async componentDidMount() {
         console.log(this.props.match)
+
+        const OriginalPostMetadata = await this.getPost();
+        console.log('original post metadata',OriginalPostMetadata)
+
+        this.setState((state,props) =>{
+            return{ OriginalPost : OriginalPostMetadata }
+            }
+        );
     }
 
     getPost = async () => {
@@ -30,10 +45,10 @@ class CommentPage extends React.Component {
         <div className="comment-page-wrapper">
             <div className="comment-page-header">
                 <h1>Comment page:</h1>
-                <p> id: {this.props.match.params.postId} {console.log(this.getNun())}</p>
+                <p> id: {this.props.match.params.postId} </p>
             </div>
             <div className="comment-list">
-            <Comment/>     
+            <Comments post={this.state.OriginalPost}/>     
             </div>
             <Link to="/">return</Link>
         </div>

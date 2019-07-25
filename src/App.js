@@ -13,10 +13,6 @@ import CommentPage from './components/commentpage';
 
 class App extends React.Component {
 
-  constructor(){
-    super();
-  }
-
   onChangePage(pageOfItems) {
     this.setState({ pageOfItems: pageOfItems });
   }
