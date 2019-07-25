@@ -1,8 +1,11 @@
+//Packages
 import React from 'react';
-import Comment from './comment';
-import '../css/originalpost.css'
-import CommentPage from './commentpage';
 import { Link } from 'react-router-dom';
+//Styles
+import '../css/originalpost.css'
+//Components
+import CommentPage from './commentpage';
+
 
 
 
@@ -43,7 +46,7 @@ class OriginalPost extends React.Component{
     getPost = async () => {
         const api_meta_call = await fetch(`https://hacker-news.firebaseio.com/v0/item/${this.props.postId}.json`)
         const meta_response = await api_meta_call.json()
-        //console.log(api_meta_call)
+
         return meta_response
     }
 
@@ -66,8 +69,7 @@ class OriginalPost extends React.Component{
                     <ul className="postInfo">
                         <li>Posted by : {this.state.metadata.by}</li>
                         <li>Score : {this.state.metadata.score}</li>
-                        <li><Link to="/comments"> comments </Link></li>
-                        {/* <li> <Link to="/react"> {this.state.metadata.descendants} comments </Link> </li> */}
+                        <li><Link to={`/comments/`+ this.state.metadata.id} target="_blank" > {this.state.metadata.descendants} comments </Link></li>
                     </ul>
                 </h3>
                 {/*<p>

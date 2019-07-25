@@ -21,7 +21,6 @@ class App extends React.Component {
     this.setState({ pageOfItems: pageOfItems });
   }
   
-
   render(){
     return(
       <BrowserRouter>
@@ -30,12 +29,8 @@ class App extends React.Component {
 
         <Switch>
           <Route exact path="/" component={OriginalPostList}/>
-          <Route path="/comments" component={CommentPage}/>
+          <Route path="/comments/:postId" component={CommentPage}/>
         </Switch>
-
-        <div>
-          {/*this.state.pageOfItems.map(item => <div key={item.id}>{item.name}</div>)*/}
-        </div>
       </div>
       </BrowserRouter>
     );
