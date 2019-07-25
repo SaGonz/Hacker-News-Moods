@@ -1,8 +1,10 @@
 import React from 'react';
-import Comment from './comments';
+import Comment from './comment';
 import '../css/originalpost.css'
 import CommentPage from './commentpage';
-import { NativeRouter, Route, Link } from "react-router-native";
+import { Link } from 'react-router-dom';
+
+
 
 class OriginalPost extends React.Component{
 
@@ -64,17 +66,10 @@ class OriginalPost extends React.Component{
                     <ul className="postInfo">
                         <li>Posted by : {this.state.metadata.by}</li>
                         <li>Score : {this.state.metadata.score}</li>
-                        <li> <Link to="/react"> {this.state.metadata.descendants} comments </Link> </li>
+                        <li><Link to="/comments"> comments </Link></li>
+                        {/* <li> <Link to="/react"> {this.state.metadata.descendants} comments </Link> </li> */}
                     </ul>
                 </h3>
-                <div>
-                    <i>This is what a comment page looks like:
-                    <CommentPage/></i>
-                </div>
-                <div>
-                    <i>This is what a comment looks like:
-                    <Comment/></i>
-                </div>
                 {/*<p>
                      if( {this.state.title_sentiment.sentiment_polarity} > 0 ){
 

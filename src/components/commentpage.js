@@ -1,6 +1,7 @@
 import React from "react";
 import '../css/commentpage.css';
-import Comment from './comments';
+import Comment from './comment';
+import { Link } from 'react-router-dom';
 
 class CommentPage extends React.Component {
   
@@ -26,9 +27,13 @@ class CommentPage extends React.Component {
   render(){
     return (
       <div className="comment-page-wrapper">
+        <div className="comment-page-header">
+            <h1>Comment page:</h1>
+        </div>
         <div className="comment-list">
           <Comment/>     
         </div>
+        <Link to="/">return</Link>
       </div>
     );
   }

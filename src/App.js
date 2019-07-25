@@ -1,43 +1,43 @@
+//Packages
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+//Styles
 import './App.css';
+
+//Components
 import Header from './components/header';
 import OriginalPostList from './components/originalpostlist';
-import Pagination from './components/pagination';
+import CommentPage from './components/commentpage';
+
 
 class App extends React.Component {
 
-  //For pagination : https://jasonwatmore.com/post/2017/03/14/react-pagination-example-with-logic-like-google
   constructor(){
     super();
-
-    // an example array of 150 items to be paged
-    var exampleItems = OriginalPostList.data;
-
-    this.state = {
-        exampleItems: exampleItems,
-        pageOfItems: []
-    };
-
-    // bind function in constructor instead of render (https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
-    this.onChangePage = this.onChangePage.bind(this);
   }
 
   onChangePage(pageOfItems) {
-    // update state with new page of items
     this.setState({ pageOfItems: pageOfItems });
   }
-  //
+  
 
   render(){
     return(
+      <BrowserRouter>
       <div>
         <Header/>
-        <OriginalPostList/>
+
+        <Switch>
+          <Route exact path="/" component={OriginalPostList}/>
+          <Route path="/comments" component={CommentPage}/>
+        </Switch>
+
         <div>
-          {this.state.pageOfItems.map(item => <div key={item.id}>{item.name}</div>)}
+          {/*this.state.pageOfItems.map(item => <div key={item.id}>{item.name}</div>)*/}
         </div>
       </div>
+      </BrowserRouter>
     );
   }
 
