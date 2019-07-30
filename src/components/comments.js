@@ -20,7 +20,9 @@ class Comments extends React.Component {
       for (let comment of this.props.post.kids) {
         initialComments.push(<Comment id={comment}></Comment>)
       }
-      return (<div>{initialComments}</div>)
+      return (
+        <div>{initialComments}</div>
+      )
     }
     return null
   }

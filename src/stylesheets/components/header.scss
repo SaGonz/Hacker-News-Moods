@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap');
+
+$neonOrange : #ffac81;
+$textColor: #D5D8D5;
+$dark: linear-gradient(111deg, rgba(0,0,0,1) 0%, rgba(3,2,2,1) 100%); 
+$boxShadow : 0px 13px 10px -13px rgba(0,0,0,0.10);
+
+.header-wrapper{
+    display: flex;
+}
+
+nav{
+
+    width: 100%;
+
+    background: $dark;
+    background: linear-gradient(177deg, rgba(54,53,53,1) 0%, rgba(26,26,26,1) 100%);
+    color: $textColor;
+
+    box-shadow: $boxShadow;
+
+    font-family: 'Darker Grotesque', sans-serif;
+    font-size: 0.9rem;
+}
+h1 {
+    margin-left: 6rem;
+    margin-right: 6rem;
+}

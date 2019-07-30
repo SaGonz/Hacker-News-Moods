@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 //Styles
-import '../css/originalpost.css'
+import '../stylesheets/components/originalpost.scss'
 //Components
 import CommentPage from './commentpage';
 
@@ -63,15 +63,17 @@ class OriginalPost extends React.Component{
     render(){
         return(
             <div className="postBox">
-                <h1>{this.state.metadata.title}</h1>
-                <h2><a href={this.state.metadata.url}>{this.state.metadata.type}</a></h2>
-                <h3>
+                <div className="post-title">
+                    <p>{this.state.metadata.title} </p>
+                    <p><a href={this.state.metadata.url} target="_blank"> {this.state.metadata.type}</a></p>
+                </div>
+                <div>
                     <ul className="postInfo">
                         <li>Posted by : {this.state.metadata.by}</li>
                         <li>Score : {this.state.metadata.score}</li>
                         <li><Link to={`/comments/`+ this.state.metadata.id} target="_blank" > {this.state.metadata.descendants} comments </Link></li>
                     </ul>
-                </h3>
+                </div>
                 {/*<p>
                      if( {this.state.title_sentiment.sentiment_polarity} > 0 ){
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 //Styles
-import '../css/commentpage.css';
+import '../stylesheets/components/commentpage.scss';
 //Components
 import Comment from './comment';
 import Comments from './comments';
@@ -43,14 +43,10 @@ class CommentPage extends React.Component {
     render(){
         return (
         <div className="comment-page-wrapper">
-            <div className="comment-page-header">
-                <h1>Comment page:</h1>
-                <p> id: {this.props.match.params.postId} </p>
-            </div>
             <div className="comment-list">
             <Comments post={this.state.OriginalPost}/>     
             </div>
-            <Link to="/">return</Link>
+            <p className="return-link"><Link to="/">return</Link></p>
         </div>
     );
   }

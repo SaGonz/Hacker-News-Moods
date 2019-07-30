@@ -1,5 +1,5 @@
 import React from "react";
-import '../css/comment.css'
+import '../stylesheets/components/comment.scss'
 
 class Comment extends React.Component {
 
@@ -37,10 +37,12 @@ class Comment extends React.Component {
       return (
         <div className="comment">
           <ul>
-              <li>id {this.props.id}</li>
-              <li>{this.state.metadata.text}</li>
+              <li>By: <b>{this.state.metadata.by}</b></li>
+              <li>
+                <p dangerouslySetInnerHTML={{__html : this.state.metadata.text}}/>
+              </li>
+              <hr/>
           </ul>
-          <p>{/*this.state.metadata.text*/}</p>
           {comments}
         </div>
       );

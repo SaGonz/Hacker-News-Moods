@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 //Styles
-import './App.css';
+import './App.scss';
 
 //Components
 import Header from './components/header';
