@@ -22,11 +22,12 @@ $commentShadow : 0px 13px 20px -13px rgba(0,0,0,0.10);
     li:nth-child(2){
         p{
             color: $subtitleColor;
+            font-size: 0.8rem;
         }
     }
 
     a{
-        color: rgb(52, 86, 150);
+        color:rgba(6,119,163,1);
     }
     
 }

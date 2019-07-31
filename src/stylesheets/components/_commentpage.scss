@@ -4,7 +4,19 @@
 
 
 .comment-page-wrapper{
+
     background-color: $siteBg;
+
+    h3{
+        text-align: center;
+        color: rgba(6,119,163,1);
+        
+        a{
+            color: rgba(6,119,163,1);
+        }
+        
+    }
+
 }
 
 
