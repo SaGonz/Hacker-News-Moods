@@ -13,7 +13,7 @@ class Comment extends React.Component {
     }
   }
   async componentDidMount () {
-    console.log('The comment prop is', this.props.id)
+
     let JSONResponse = await this.getPost()
     this.setState((state, props) => {
       return {metadata: JSONResponse}
@@ -33,17 +33,16 @@ class Comment extends React.Component {
       let comments = []
       if (this.state.metadata.kids) {
         for (let comment of this.state.metadata.kids) {
-          comments.push(<Comment id={comment}></Comment>)
+          comments.push(<Comment id={comment} className="childComment" ></Comment>)
         }
       }
       return (
         <div className="comment">
           <ul>
-              <li>By: <b>{this.state.metadata.by}</b></li>
+              <li><b>{this.state.metadata.by}</b></li>
               <li>
                 <p dangerouslySetInnerHTML={{__html : this.state.metadata.text}}/>
               </li>
-              <hr/>
           </ul>
           {comments}
         </div>

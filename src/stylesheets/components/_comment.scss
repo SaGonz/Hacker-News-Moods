@@ -1,10 +1,36 @@
 @import '../abstracts/variables.scss';
 @import '../base/fonts';
+@import './links';
+
+$commentShadow : 0px 13px 20px -13px rgba(0,0,0,0.10);
 
 .comment{
-    padding-left: 3rem;
+    padding: 0.5rem 0rem 0.5rem 1rem;
+    
     margin: 2rem;
+    border-radius: $commentRadius;
 
     background-color: $postBg;
+    box-shadow: $commentShadow;
+
+    li:nth-child(1){
+        font-size: 1rem;
+        font-weight: 800px;
+        color: $titleColor;
+    }
+
+    li:nth-child(2){
+        p{
+            color: $subtitleColor;
+        }
+    }
+
+    a{
+        color: rgb(52, 86, 150);
+    }
     
+}
+
+.childComment{
+    padding-left: 3rem;
 }
