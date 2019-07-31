@@ -43,7 +43,7 @@ class CommentPage extends React.Component {
     render(){
         return (
         <div className="comment-page-wrapper">
-            <div className="comment-list">
+            <div>
             <Comments post={this.state.OriginalPost}/>     
             </div>
             <p className="return-link"><Link to="/">return</Link></p>

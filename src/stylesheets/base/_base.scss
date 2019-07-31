@@ -1,11 +1,12 @@
-@import '';
+@import '../abstracts/variables.scss';
+@import './fonts';
+
 //Very basic styles go here.
 
 html{
     box-sizing: border-box;
 }
 
-a{
-    text-decoration: none;
-    color: $URLcolor;
+body{
+    background-color: $siteBg;
 }

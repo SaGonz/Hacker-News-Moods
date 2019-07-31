@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 //Styles
 import '../stylesheets/base/_fonts.scss';
 import '../stylesheets/components/_originalpost.scss'
-//Components
-import CommentPage from './commentpage';
 
 
 
@@ -72,6 +70,8 @@ class OriginalPost extends React.Component{
                     <ul className="postInfo">
                         <li>Posted by : {this.state.metadata.by}</li>
                         <li>Score : {this.state.metadata.score}</li>
+                    </ul>
+                    <ul>
                         <li><Link to={`/comments/`+ this.state.metadata.id} target="_blank" > {this.state.metadata.descendants} comments </Link></li>
                     </ul>
                 </div>

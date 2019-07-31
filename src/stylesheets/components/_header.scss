@@ -29,14 +29,14 @@ $boxShadow : 0px 13px 10px -5px rgba(0,0,0,0.10);
 
     a{
         
-        transition: $linkTransition;
+        transition: $txtlinkTransition;
         color: $lightLinkColor;
     
         &:hover{
             color: #ffffff;
             text-shadow: $lightShadow;
         }
-        
+
     }
 }
 
