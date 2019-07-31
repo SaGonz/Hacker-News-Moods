@@ -1,0 +1,41 @@
+//General
+$siteBg: #F1F1F1;
+$postBg: #FFFFFF;
+$mainFont: 'Darker Grotesque', sans-serif;
+$secondaryFont: 'Arial';
+
+$titleColor: #5a5858;
+$subtitleColor: #494949;
+
+$lightLinkColor: #FFFFFF;
+$alternativeColor: linear-gradient(163deg, rgba(245,84,121,1) 0%, rgba(186,0,0,1) 100%);
+$alternativeColor: linear-gradient(163deg, rgba(143,255,79,1) 0%, rgba(13,176,143,1) 100%);
+$alternativeColor: linear-gradient(146deg, rgba(154,243,245,1) 0%, rgba(6,119,163,1) 100%);
+
+$OPRadius: 50px;
+$commentRadius: 30px;
+$pagRadius: 300px;
+
+$lightShadow: 0 0 100px rgb(247, 247, 247), 0 0 50px rgb(199, 199, 199);
+$darkShadow: 0px 13px 10px -13px rgba(0,0,0,0.10);
+$linkTransition: 0.8s all ease;
+
+//HAPPY LITTLE ACCIDENTS
+//Color scheme
+$negativeBg: rgba(255, 60, 44,1);
+$negativeBg2: linear-gradient(163deg, rgba(255,60,44,1) 0%, rgba(210,30,15,1) 100%);
+$negativeText2: rgba(255,240,239,1);
+$negativeComment: rgba(255, 19,  0,1);
+$negativeSubtext: rgba(119,  9,  0,1);
+
+$neutralBg: rgba( 30,171,156,1);	
+$neutralText2: rgba(157,162,162,1);
+$neutralText: rgba(204,217,216,1);
+$neutralComment: rgba(  0,244,218,1);
+$neutralSubtext: rgba(  0, 74, 66,1);
+
+$positiveBg: rgba(148,235, 41,1);	
+$positiveText2: rgba(229,233,225,1);
+$positiveText: rgba(239,246,231,1);
+$positiveComment: rgba(139,252,  0,1);
+$positiveSubtext: rgba( 60,108,  0,1);

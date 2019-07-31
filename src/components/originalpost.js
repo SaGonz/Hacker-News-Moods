@@ -2,7 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 //Styles
-import '../stylesheets/components/originalpost.scss'
+import '../stylesheets/base/_fonts.scss';
+import '../stylesheets/components/_originalpost.scss'
 //Components
 import CommentPage from './commentpage';
 

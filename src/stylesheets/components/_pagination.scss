@@ -1,0 +1,29 @@
+@import '../abstracts/variables.scss';
+@import '../base/fonts';
+
+$pagBg: #C3C3C3;
+
+.paginationWrapper{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 0.5rem;
+}
+
+.paginationWrapper>div{
+    width: 10%;
+    border-radius: $pagRadius;
+
+    color: #ffffff;
+    background-color: $pagBg;
+    box-shadow: $darkShadow;
+
+    text-align: center;
+    font-size: 2em;
+
+    transition: $linkTransition;
+
+    &:hover{
+        background-color: #ffffff;
+        text-shadow: $lightShadow;
+    }
+}

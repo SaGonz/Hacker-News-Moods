@@ -1,0 +1,19 @@
+@import 'abstracts/variables';
+
+//vendors would go here
+
+@import 'base/base';
+@import 'base/fonts';
+
+//layouts would go here
+
+@import 'components/all';
+@import 'components/comment';
+@import 'components/commentpage';
+@import 'components/header';
+@import 'components/originalpost';
+@import 'components/pagination';
+
+//pages would go here
+
+//themes would go here

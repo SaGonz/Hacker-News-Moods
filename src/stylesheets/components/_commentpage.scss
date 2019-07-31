@@ -1,0 +1,15 @@
+@import '../abstracts/variables.scss';
+@import '../base/fonts';
+
+$HeaderBg: #C3C3C3;
+
+.return-link{
+    background-color: #C3C3C3;
+    text-align: center;
+    font-size: 2rem;
+    a{
+        text-decoration: none;
+        font-weight: 600;
+        color: #989191;
+    }
+}

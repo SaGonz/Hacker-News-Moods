@@ -1,4 +1,5 @@
 import React from 'react';
+//Components
 import OriginalPost from './originalpost';
 import Pagination from './pagination';
 

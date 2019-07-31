@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 //Styles
-import '../stylesheets/components/commentpage.scss';
+import '../stylesheets/base/_fonts.scss';
+import '../stylesheets/components/_commentpage.scss';
 //Components
-import Comment from './comment';
 import Comments from './comments';
 
 
