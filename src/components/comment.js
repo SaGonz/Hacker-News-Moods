@@ -10,15 +10,54 @@ class Comment extends React.Component {
 
     this.state = {
       metadata : undefined,
+      //Stores all the comments of the thread in a String
+      ThreadComments : '',
+      commentSentiment : 0
     }
   }
+
   async componentDidMount () {
 
     let JSONResponse = await this.getPost(this.props.id);
+    const sentimentResponse = await this.getSentiment(this.state.metadata.text);
+
     this.setState((state, props) => {
-      return {metadata: JSONResponse}
+      return {metadata: JSONResponse, commentSentiment: sentimentResponse}
     });
+    console.log('What is metadata? ',this.state.metadata)
+    console.log('Thread comments (1)', this.state.ThreadComments)
+    this.state.ThreadComments += this.state.metadata.text
+    console.log('Thread comments (2)', this.state.ThreadComments)
     
+    
+  }
+
+  componentDidUpdate() {
+
+    console.log( 'COMMENT propse passed from the parent are', this.props)
+
+  }
+
+  async shouldComponentUpdate () {
+
+    const post_metadata = await this.getPost();
+    //const sentiment_response = await this.getSentiment(this..title);
+
+    this.setState((state, props) => {
+        //return {metadata: post_metadata, title_sentiment: sentiment_response}
+        return {metadata: post_metadata}
+    })
+    return true
+  } 
+
+  getSentiment = async ( text ) => {
+    const sentiment_call = await fetch('/sentiment/', {
+            method: 'POST',
+            body: JSON.stringify({'text': text})
+        });
+    console.log(sentiment_call)
+    const sentiment_response = await sentiment_call.json()
+    return sentiment_response
   }
 
   getPost = async (id) => {
@@ -34,15 +73,18 @@ class Comment extends React.Component {
       let comments = []
       if (this.state.metadata.kids) {
         for (let comment of this.state.metadata.kids) {
-          comments.push(<Comment id={comment} className="childComment" ></Comment>)
-          //let CommentRequest = await this.getPost(comment);
-          //CommentsString += String(CommentRequest.text);
-          //console.log('Show me CommentRequest, please', CommentRequest);
-          console.log('Show me Comments String, please', CommentsString);
-          console.log('Show me comment', comment)
-          console.log('What is this.state.metadata.kids?', typeof this.state.metadata.kids)
-        }
-        
+          //if getSentiment(this.state.metadata.text) > 0{}
+          var mood = {
+            background-color: linear-gradient(163deg, rgba(245,84,121,1) 0%, rgba(186,0,0,1) 100%);
+            $altColor: linear-gradient(163deg, rgba(143,255,79,1) 0%, rgba(13,176,143,1) 100%);
+            $altColor: linear-gradient(146deg, rgba(154,243,245,1) 0%, rgba(6,119,163,1) 100%);
+            $altTextColor: -webkit-linear-gradient(163deg, rgba(245,84,121,1) 0%, rgba(186,0,0,1) 100%);
+            $altTextColor: -webkit-linear-gradient(163deg, rgba(143,255,79,1) 0%, rgba(13,176,143,1) 100%);
+            $altTextColor: -webkit-linear-gradient(146deg, rgba(154,243,245,1) 0%, rgba(6,119,163,1) 100%);
+          }
+
+          comments.push(<Comment id={comment} style={mood}></Comment>)
+        }  
       }
       return (
         <div className="comment">
