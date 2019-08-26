@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Hacker Moods
+
+A website that renders Hacker News and displays the overall mood of each post, including comments. Made with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
