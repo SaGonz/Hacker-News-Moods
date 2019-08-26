@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://sagonz.github.io/Hacker-News-Moods/",
   "dependencies": {
+    "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

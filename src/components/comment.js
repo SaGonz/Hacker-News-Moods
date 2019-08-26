@@ -74,16 +74,16 @@ class Comment extends React.Component {
       if (this.state.metadata.kids) {
         for (let comment of this.state.metadata.kids) {
           //if getSentiment(this.state.metadata.text) > 0{}
-          var mood = {
+          /*var mood = {
             background-color: linear-gradient(163deg, rgba(245,84,121,1) 0%, rgba(186,0,0,1) 100%);
             $altColor: linear-gradient(163deg, rgba(143,255,79,1) 0%, rgba(13,176,143,1) 100%);
             $altColor: linear-gradient(146deg, rgba(154,243,245,1) 0%, rgba(6,119,163,1) 100%);
             $altTextColor: -webkit-linear-gradient(163deg, rgba(245,84,121,1) 0%, rgba(186,0,0,1) 100%);
             $altTextColor: -webkit-linear-gradient(163deg, rgba(143,255,79,1) 0%, rgba(13,176,143,1) 100%);
             $altTextColor: -webkit-linear-gradient(146deg, rgba(154,243,245,1) 0%, rgba(6,119,163,1) 100%);
-          }
+          }*/
 
-          comments.push(<Comment id={comment} style={mood}></Comment>)
+          comments.push(<Comment id={comment} /*style={mood}*/></Comment>)
         }  
       }
       return (
@@ -98,7 +98,7 @@ class Comment extends React.Component {
         </div>
       );
     }
-    return null
+    return null;
   }
 }
 
