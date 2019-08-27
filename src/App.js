@@ -10,7 +10,6 @@ import Header from './components/header';
 import OriginalPostList from './components/originalpostlist';
 import CommentPage from './components/commentpage';
 
-
 class App extends React.Component {
 
   onChangePage(pageOfItems) {
