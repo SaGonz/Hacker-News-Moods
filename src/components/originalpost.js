@@ -72,7 +72,7 @@ class OriginalPost extends React.Component{
                         <li>Score : {this.state.metadata.score}</li>
                     </ul>
                     <ul>
-                        <li><Link to={`/comments/`+ this.state.metadata.id} target="_blank" > {this.state.metadata.descendants} comments </Link></li>
+                        <li><Link to={`./comments/`+ this.state.metadata.id} target="_blank" > {this.state.metadata.descendants} comments </Link></li>
                     </ul>
                 </div>
                 {/*<p>

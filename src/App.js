@@ -24,8 +24,8 @@ class App extends React.Component {
         <Header/>
 
         <Switch>
-          <Route exact path="/" component={OriginalPostList}/>
-          <Route path="/comments/:postId" component={CommentPage}/>
+          <Route exact path="./" component={OriginalPostList}/>
+          <Route path="./comments/:postId" component={CommentPage}/>
         </Switch>
       </div>
       </BrowserRouter>

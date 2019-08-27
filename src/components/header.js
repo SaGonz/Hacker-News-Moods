@@ -11,7 +11,7 @@ class Header extends React.Component{
         return(
             <div className='header-wrapper'>
                 <nav>
-                    <h1><Link to="/">Hacker News</Link></h1>
+                    <h1><Link to="./">Hacker News</Link></h1>
                 </nav>
             </div>
         );

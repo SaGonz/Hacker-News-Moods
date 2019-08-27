@@ -47,7 +47,7 @@ class CommentPage extends React.Component {
             <div>
             <Comments post={this.state.OriginalPost}/>     
             </div>
-            <p className="return-link"><Link to="/">return</Link></p>
+            <p className="return-link"><Link to="./">return</Link></p>
         </div>
     );
   }
