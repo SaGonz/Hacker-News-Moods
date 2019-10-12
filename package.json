@@ -2,7 +2,7 @@
   "name": "hackermoods",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sagonz.github.io/subdir/Hacker-News-Moods/",
+  "homepage": "https://sagonz.github.io/Hacker-News-Moods/",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0",
