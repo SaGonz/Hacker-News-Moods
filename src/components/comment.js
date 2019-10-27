@@ -34,7 +34,7 @@ class Comment extends React.Component {
 
   componentDidUpdate() {
 
-    console.log( 'COMMENT propse passed from the parent are', this.props)
+    console.log( 'COMMENT props passed from the parent are', this.props)
 
   }
 

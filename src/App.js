@@ -17,8 +17,11 @@ class App extends React.Component {
   }
   
   render(){
+
+    const PUBLIC_URL = "https://sagonz.github.io/Hacker-News-Moods/";
+
     return(
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div>
         <Header/>
 
