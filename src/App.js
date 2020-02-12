@@ -11,16 +11,15 @@ import OriginalPostList from './components/originalpostlist';
 import CommentPage from './components/commentpage';
 
 class App extends React.Component {
-
   onChangePage(pageOfItems) {
     this.setState({ pageOfItems: pageOfItems });
   }
   
-  render(){
-
+  render() {
     const PUBLIC_URL = "https://sagonz.github.io/Hacker-News-Moods/";
 
     return(
+      
       <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div>
         <Header/>
@@ -31,9 +30,9 @@ class App extends React.Component {
         </Switch>
       </div>
       </BrowserRouter>
+      
     );
   }
-
 }
 
 

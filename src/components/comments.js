@@ -8,17 +8,13 @@ class Comments extends React.Component {
   
   componentDidUpdate() {
 
-    console.log( 'COMMENTS propse passed from the parent are', this.props)
+    console.log( 'COMMENTS props passed from the parent are', this.props)
   }
 
   render() {
-
-    let commentsString = "";
-    let commentsString2 = "";
-
     if (Object.values(this.props.post).length > 0 && Object.values(this.props.post.kids).length > 0) {
       let initialComments = []
-      for (let comment of this.props.post.kids) {
+      for(let comment of this.props.post.kids) {
         initialComments.push(<Comment id={comment}></Comment>)
       }
       return (
@@ -29,6 +25,5 @@ class Comments extends React.Component {
   }
 
 }
-
 
 export default Comments;

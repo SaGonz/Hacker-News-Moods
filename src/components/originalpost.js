@@ -64,7 +64,7 @@ class OriginalPost extends React.Component{
             <div className="postBox">
                 <div className="post-title">
                     <p>{this.state.metadata.title} </p>
-                    <p><a href={this.state.metadata.url} target="_blank"> {this.state.metadata.type}</a></p>
+                    <p><a href={this.state.metadata.url} target="_blank" rel="noopener noreferrer"> {this.state.metadata.type}</a></p>
                 </div>
                 <div>
                     <ul className="postInfo">

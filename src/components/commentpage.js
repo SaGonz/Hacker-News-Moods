@@ -43,7 +43,7 @@ class CommentPage extends React.Component {
     render(){
         return (
         <div className="comment-page-wrapper">
-            <h3><a href={this.state.OriginalPost.url} target="_blank">{this.state.OriginalPost.title}</a></h3>
+            <h3><a href={this.state.OriginalPost.url} target="_blank" rel="noopener noreferrer">{this.state.OriginalPost.title}</a></h3>
             <div>
             <Comments post={this.state.OriginalPost}/>     
             </div>

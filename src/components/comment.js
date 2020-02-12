@@ -68,7 +68,6 @@ class Comment extends React.Component {
 }
 
   render(){
-    let CommentsString = '';
     if (this.state.metadata) {
       let comments = []
       if (this.state.metadata.kids) {
